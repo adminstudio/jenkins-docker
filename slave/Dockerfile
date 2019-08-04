@@ -1,4 +1,5 @@
 FROM ubuntu:16.04
+LABEL maintainer="Asdrubal Gonzalez <agpenton@gmail.com>"
 
 # Install Docker CLI
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates

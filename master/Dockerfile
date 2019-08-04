@@ -1,4 +1,5 @@
 FROM jenkins/jenkins:latest
+LABEL maintainer="Asdrubal Gonzalez <agpenton@gmail.com>"
 
 RUN /usr/local/bin/install-plugins.sh git mstest matrix-auth workflow-aggregator docker-workflow blueocean credentials-binding
 
