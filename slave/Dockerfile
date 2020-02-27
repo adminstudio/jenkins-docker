@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y docker-ce --allow-unauthenticated
 
 RUN apt-get update && apt-get install -y openjdk-8-jre curl python python-pip git
 RUN easy_install jenkins-webapi
+RUN cd ~ && curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh && bash nodesource_setup.sh && \
+    apt install nodejs -yq
 
 # Get docker-compose in the agent container
 
@@ -19,7 +21,7 @@ ADD slave.py /var/lib/jenkins/slave.py
 
 WORKDIR /home/jenkins
 
-ENV JENKINS_URL "http://jenkins"
+ENV JENKINS_URL "http://jenkins.bmakers.site"
 ENV JENKINS_SLAVE_ADDRESS ""
 ENV JENKINS_USER "admin"
 ENV JENKINS_PASS "Samsungi717"
